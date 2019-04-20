@@ -2,7 +2,18 @@
 
 <% @shops.each do |shop| %>
 <br>
-<%= shop.name %>
+<%= shop.user.email %>
+<%= link_to shop.name, shop_path(shop) %>
 <%= shop.description %>
 <%= shop.price %>
+
+ <% if policy(shop).create? %>
+ <%= link_to "New Gym", new_shop_path %>
+  <% end %>
+
+    <% if policy(shop).edit? %>
+  <%= link_to "Update", edit_shop_path(shop)  %>
+   <% end %>
+
 <% end %>
+

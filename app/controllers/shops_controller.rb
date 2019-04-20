@@ -3,7 +3,7 @@ class ShopsController < ApplicationController
 
   def index
     #@shops =Shop.all
-    @shops = policy_scope(Shop).order(created_At: :desc)
+    @shops = policy_scope(Shop).order(created_at: :desc)
 
   end
 

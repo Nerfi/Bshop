@@ -15,5 +15,9 @@
   <%= link_to "Update", edit_shop_path(shop)  %>
    <% end %>
 
+   <% if policy(shop).destroy? %>
+   <%= link_to "destroy", shop, method: :delete ,data:{ confirm: "Are u sure buddy?"} %>
+   <% end %>
+
 <% end %>
 

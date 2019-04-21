@@ -1,4 +1,6 @@
 class ShopsController < ApplicationController
+  before_action :set_shop, only: [:show, :edit, :update, :destroy]
+
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
@@ -21,6 +23,9 @@ class ShopsController < ApplicationController
 
   def edit
 
+    @shop = Shop.find(params[:id])
+    authorize @shop
+
   end
 
   def create
@@ -34,19 +39,35 @@ class ShopsController < ApplicationController
       render :edit
     end
 
+
   end
 
   def update
+    @shop = Shop.find(params[:id])
+    @shop.update(shop_params)
+    if @shop.update(shop_params)
+      redirect_to @shop, notice: "Your shop was updated, thanks"
+    else
+      render :edit
+    end
+    authorize @shop
 
   end
 
   def destroy
     @shop.destroy
-    redirect_to shop_index_path
+    redirect_to shops_path
+    #authorize @shop
 
   end
 
   private
+
+  def set_shop
+    @shop = Shop.find(params[:id])
+    authorize @shop
+
+  end
 
   def shop_params
     params.require(:shop).permit(:name, :description, :price)

@@ -57,7 +57,7 @@ class ShopsController < ApplicationController
   def destroy
     @shop.destroy
     redirect_to shops_path
-    #authorize @shop
+
 
   end
 

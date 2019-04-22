@@ -8,6 +8,18 @@
 <%= shop.description %>
 <%= shop.price %>
 
+ <div class="card"
+  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url('<%= cl_image_path @shop.photo, height: 300, width: 400, crop: :fill %>')">
+  <div class="card-category">Popular</div>
+  <div class="card-description">
+    <h2>Some stuff</h2>
+    <p>Very cool stuff, useful and smart</p>
+  </div>
+  <a class="card-link" href="#" ></a>
+
+
+
  <% if policy(shop).create? %>
  <%= link_to "New Gym", new_shop_path %>
   <% end %>
@@ -20,11 +32,48 @@
    <%= link_to "destroy", shop, method: :delete ,data:{ confirm: "Are u sure buddy?"} %>
    <% end %>
 
+</div>
+
+
 <% end %>
 
+</div>
+
+
+<div class="card"
+  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url('<%= cl_image_path @shop.photo, height: 300, width: 400, crop: :fill %>')">
+  <div class="card-category">Popular</div>
+  <div class="card-description">
+    <h2>Some stuff</h2>
+    <p>Very cool stuff, useful and smart</p>
+  </div>
+  <a class="card-link" href="#" ></a>
+
+
+
+ <% if policy(shop).create? %>
+ <%= link_to "New Gym", new_shop_path %>
+  <% end %>
+
+    <% if policy(shop).edit? %>
+  <%= link_to "Update", edit_shop_path(shop)  %>
+   <% end %>
+
+   <% if policy(shop).destroy? %>
+   <%= link_to "destroy", shop, method: :delete ,data:{ confirm: "Are u sure buddy?"} %>
+   <% end %>
+
+</div>
 
 
 
 
+<!-- ADDING 2 container -->
+
+<div class="container2">
+
+<!-- img for testing-->
+  <img src="https://images.unsplash.com/photo-1553531384-b5837c479d87?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=530&q=80" alt="">
 </div>
 

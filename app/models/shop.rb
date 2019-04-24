@@ -1,5 +1,9 @@
 class Shop < ApplicationRecord
   belongs_to :user
+
+  #adding reviews to model
+  has_many :reviews, dependent: :destroy
+
   #adding mount_uploader for cloudinary
    mount_uploader :photo, PhotoUploader
 

@@ -1,6 +1,17 @@
-<%= cl_image_tag @shop.photo, height: 300, width: 400, crop: :fill %>
+<div class="container">
+  <div class="row justify-content-center">
+     <div class="col-12 col-lg-6">
 
-<h1> <%= @shop.name %></h1>
-<p><%= @shop.description %></p>
-<p><%= @shop.price %></p>
+      <%= cl_image_tag @shop.photo, height: 300, width: 400, crop: :fill %>
+
+      <h1> <%= @shop.name %></h1>
+      <p><%= @shop.description %></p>
+      <p><%= @shop.price %></p>
+
+
+     </div>
+
+  </div>
+
+</div>
 

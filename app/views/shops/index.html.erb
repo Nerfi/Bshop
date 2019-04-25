@@ -41,6 +41,16 @@
 
  </div>
 
+  <ul>
+      <% @shops.each do |shop| %>
+        <li data-shop-id="<%= shop.id %>">
+          <%= shop.name %>
+          <%= link_to "Delete", shop, method: :delete, remote: true %>
+        </li>
+      <% end %>
+    </ul>
+
+
 
 </div>
 

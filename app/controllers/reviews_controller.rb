@@ -1,5 +1,8 @@
 class ReviewsController < ApplicationController
 
+  before_action :set_shop, only: [ :edit, :update, :destroy]
+
+
   def create
     @shop = Shop.find(params[:shop_id])
     @review = Review.new(review_params)
@@ -8,9 +11,18 @@ class ReviewsController < ApplicationController
     authorize @review.shop
 
     if @review.save
-    redirect_to shop_path(@shop)
+      respond_to do |format|
+    format.html  {redirect_to shop_path(@shop)}
+    format.js
+
+  end
+
   else
-    render 'shops/show'
+  respond_to do  |format|
+     format.html {render 'gyms/show'}
+     format.js
+  end
+
   end
 
 
@@ -21,6 +33,14 @@ class ReviewsController < ApplicationController
 
   def review_params
     params.require(:review).permit(:content)
+
+  end
+
+  def set_shop
+  @shop = Shop.find(params[:id])
+  authorize @shop
+
+
 
   end
 end

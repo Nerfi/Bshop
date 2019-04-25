@@ -7,6 +7,9 @@ class Shop < ApplicationRecord
   #adding mount_uploader for cloudinary
    mount_uploader :photo, PhotoUploader
 
+   #money rails
+    monetize :price_cents
+
   validates :name, presence: true, uniqueness: true
   validates :description, presence: true, length: { minimum: 15 }
   validates :price, presence: true

@@ -6,7 +6,8 @@
 
       <h1>Name: <%= @shop.name %></h1>
       <h2>Description: <%= @shop.description %></h2>
-      <p>Price: <%= @shop.price %></p>
+      <p>Amount: <%= humanized_money_with_symbol(@shop.price) %></p>
+
 
       <!-- adding code for reviews -->
       <h2>

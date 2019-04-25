@@ -29,6 +29,15 @@
       <%= render 'reviews/form', shop: @shop, review: @review %>
 
 
+            <ul>
+             <% if policy(@shop).destroy? %>
+
+          <li data-shop-id="<%= @shop.id %>">
+          <%= link_to "Delete Bshop", @shop, method: :delete, remote: true, data:{ confirm: "Are u sure buddy?"} %>
+        </li>
+        <% end %>
+
+    </ul>
 
 
 

@@ -26,9 +26,10 @@
   <%= link_to "Update", edit_shop_path(shop)  %>
    <% end %>
 
-   <% if policy(shop).destroy? %>
-   <%= link_to "destroy", shop, method: :delete ,data:{ confirm: "Are u sure buddy?"} %>
-   <% end %>
+<!-- removed polici of destroy method, 'cause I added it on the show view -->
+
+
+
 
 </div>
 
@@ -41,14 +42,7 @@
 
  </div>
 
-  <ul>
-      <% @shops.each do |shop| %>
-        <li data-shop-id="<%= shop.id %>">
-          <%= shop.name %>
-          <%= link_to "Delete", shop, method: :delete, remote: true %>
-        </li>
-      <% end %>
-    </ul>
+
 
 
 

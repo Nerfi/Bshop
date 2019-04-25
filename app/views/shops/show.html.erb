@@ -4,9 +4,9 @@
 
       <%= cl_image_tag @shop.photo, height: 300, width: 400, crop: :fill %>
 
-      <h1> <%= @shop.name %></h1>
-      <p><%= @shop.description %></p>
-      <p><%= @shop.price %></p>
+      <h1>Name: <%= @shop.name %></h1>
+      <h2>Description: <%= @shop.description %></h2>
+      <p>Price: <%= @shop.price %></p>
 
       <!-- adding code for reviews -->
       <h2>
@@ -32,9 +32,9 @@
             <ul>
              <% if policy(@shop).destroy? %>
 
-          <li data-shop-id="<%= @shop.id %>">
-          <%= link_to "Delete Bshop", @shop, method: :delete, remote: true, data:{ confirm: "Are u sure buddy?"} %>
-        </li>
+             <li data-shop-id="<%= @shop.id %>">
+            <%= link_to "Delete Bshop", @shop, method: :delete, remote: true, data:{ confirm: "Are u sure buddy?"} %>
+          </li>
         <% end %>
 
     </ul>

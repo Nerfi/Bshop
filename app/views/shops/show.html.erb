@@ -8,6 +8,13 @@
       <h2>Description: <%= @shop.description %></h2>
       <p>Amount: <%= humanized_money_with_symbol(@shop.price) %></p>
 
+       <!-- adding code to add form to create an order -->
+
+          <%= form_tag orders_path do %>
+         <%= hidden_field_tag 'shop_id', @shop.id %>
+         <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+       <% end %>
+
 
       <!-- adding code for reviews -->
       <h2>

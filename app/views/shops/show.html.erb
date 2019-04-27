@@ -5,13 +5,13 @@
       <%= cl_image_tag @shop.photo, height: 300, width: 400, crop: :fill %>
 
       <h1>Name: <%= @shop.name %></h1>
-      <h2>Description: <%= @shop.description %></h2>
+      <h3>Description: <%= @shop.description %></h3>
       <p>Amount: <%= humanized_money_with_symbol(@shop.price) %></p>
 
        <!-- adding code to add form to create an order -->
           <%= form_tag orders_path do %>
          <%= hidden_field_tag 'shop_id', @shop.id %>
-         <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+         <%= submit_tag 'Book', class: 'btn btn-primary' %>
        <% end %>
 
 
@@ -45,6 +45,14 @@
             <%= link_to "Delete Bshop", @shop, method: :delete, remote: true, data:{ confirm: "Are u sure buddy?"} %>
           </li>
         <% end %>
+
+            <% if policy(@shop).edit? %>
+            <li data-shop-id= "<%= @shop.id %>">
+            <%= link_to "Update", edit_shop_path(@shop)  %>
+
+            </li>
+            <% end %>
+
 
     </ul>
 

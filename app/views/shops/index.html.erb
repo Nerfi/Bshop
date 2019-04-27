@@ -8,7 +8,7 @@
 
  <div class="card"
   style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-         url('<%= cl_image_path shop.photo, height: 300, width: 400, crop: :fill %>')">
+         url('<%= cl_image_path shop.photo, height: 330, width: 505, crop: :fill %>')">
   <div class="card-category"><%= link_to shop.name, shop_path(shop) %></div>
   <div class="card-description">
     <h2>Some stuff</h2>
@@ -22,9 +22,6 @@
  <%= link_to "New Gym", new_shop_path %>
   <% end %>
 
-    <% if policy(shop).edit? %>
-  <%= link_to "Update", edit_shop_path(shop)  %>
-   <% end %>
 
 <!-- removed polici of destroy method, 'cause I added it on the show view -->
 

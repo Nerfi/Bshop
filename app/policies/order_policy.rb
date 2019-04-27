@@ -16,8 +16,9 @@ class OrderPolicy < ApplicationPolicy
   end
 
   def show?
-    return true
+
    if record.user == user
+    return true
     end
 
 

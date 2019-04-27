@@ -10,8 +10,8 @@ class Shop < ApplicationRecord
    #money rails
     monetize :price_cents
 
-    #important when we play with money, erorr no nos deja crear una shop
-    validates :sku, presence: true, uniqueness: true
+    #important when we play with money,pd: error no nos deja crear una shop
+   # validates :sku, presence: true, uniqueness: true
 
   validates :name, presence: true, uniqueness: true
   validates :description, presence: true, length: { minimum: 15 }

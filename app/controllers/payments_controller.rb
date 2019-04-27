@@ -2,10 +2,11 @@ class PaymentsController < ApplicationController
       before_action :set_order
   def new
 
-
+ authorize @order
   end
 
   def create
+    authorize @order
 
     customer = Stripe::Customer.create(
     source: params[:stripeToken],
@@ -25,13 +26,13 @@ class PaymentsController < ApplicationController
 rescue Stripe::CardError => e
   flash[:alert] = e.message
   redirect_to new_order_payment_path(@order)
-
+ authorize @order
   end
 
   private
 
   def set_order
     @order = current_user.orders.where(state: 'pending').find(params[:order_id])
-    #authorize @order
+   # authorize @order
   end
 end

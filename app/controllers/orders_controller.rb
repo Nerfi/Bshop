@@ -5,7 +5,7 @@ class OrdersController < ApplicationController
     order = Order.create!(shop_sku: shop.sku, amount: shop.price, state: 'pending', user: current_user)
 
     redirect_to new_order_payment_path(order)
-    authorize @order
+    authorize order
 
   end
 

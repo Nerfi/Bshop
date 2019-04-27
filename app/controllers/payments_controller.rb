@@ -32,5 +32,6 @@ rescue Stripe::CardError => e
 
   def set_order
     @order = current_user.orders.where(state: 'pending').find(params[:order_id])
+    #authorize @order
   end
 end

@@ -1,3 +1,7 @@
+h1,h2,h3,p {
+  font-family: 'Bungee Shade', cursive;
+}
+
 .banner {
   background-size: cover;
   background-position: center;
@@ -23,7 +27,13 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
-
+// how we work section
+#work h2{
+  font-size:50px;
+  padding: 30px;
+  text-align: center;
+  font-family: 'Bungee Shade', cursive;
+}
 
 // cards
 .card-category {

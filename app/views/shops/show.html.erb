@@ -1,6 +1,9 @@
 <div class="container">
   <div class="row justify-content-center">
+
      <div class="col-12 col-lg-6">
+
+
 
       <%= cl_image_tag @shop.photo, height: 300, width: 400, crop: :fill %>
 
@@ -34,21 +37,22 @@
 
 
       </div>
-           <div class="policy">
-
-             <% if policy(@shop).create? %>
-            <%= link_to "New Gym", new_shop_path %>
-           <% end %>
-
-           </div>
 
 
 
 
       <%= render 'reviews/form', shop: @shop, review: @review %>
 
+                  <ul>
 
-            <ul>
+
+                    <% if policy(@shop).create? %>
+                <%= link_to "New Gym", new_shop_path %>
+                <% end %>
+             </ul>
+
+
+             <ul>
              <% if policy(@shop).destroy? %>
 
              <li data-shop-id="<%= @shop.id %>">

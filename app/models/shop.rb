@@ -10,6 +10,9 @@ class Shop < ApplicationRecord
    #money rails
     monetize :price_cents
 
+    #adding rating
+    accepts_nested_attributes_for :reviews
+
     #important when we play with money,pd: error no nos deja crear una shop
     validates :sku, presence: true, uniqueness: true
 

@@ -44,16 +44,21 @@
 
 
 
+      <%= render 'reviews/form', shop: @shop, review: @review %>
+
       <!-- adding rating  system-->
+      <%= simple_form_for(@shop, html: { class: "review_form" }) do |f| %>
+
       <%= simple_form_for @shop do |f| %>
       <%= f.simple_fields_for :review do |r| %>
       <%= r.input :rating, collection: (1..5).to_a, label: "Rate your experience" %>
        <% end %>
-      <%= f.button :submit %>
+         <%#= f.submit, class: "hidden" %>
+
+      <%= f.button :submit, class: "hidden" %>
      <% end %>
+<% end %>
 
-
-      <%= render 'reviews/form', shop: @shop, review: @review %>
 
 
                   <ul>

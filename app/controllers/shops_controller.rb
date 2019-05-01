@@ -4,7 +4,7 @@ class ShopsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    #@shops =Shop.all
+
     @shops = policy_scope(Shop).order(created_at: :desc)
     @shops = Shop.where.not(latitude: nil, longitude: nil)
 

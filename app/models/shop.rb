@@ -10,6 +10,11 @@ class Shop < ApplicationRecord
    #money rails
     monetize :price_cents
 
+    #adding geocoder config
+    geocoded_by :address
+    after_validation :geocode, if: :will_save_change_to_address?
+
+
     #adding rating
     accepts_nested_attributes_for :reviews
 

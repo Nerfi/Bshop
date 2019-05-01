@@ -12,11 +12,11 @@ const displayContent = () => {
 
 
 const findContent = () => {
-  const parraf = document.getElementById('find');
-  parraf.addEventListener("click", (event) => {
+  const parr = document.getElementById('find');
+  parr.addEventListener("click", (event) => {
   event.preventDefault();
   //parraf.classList.add("demo");
-  parraf.insertAdjacentHTML("beforeend", "<h2>Search over all the Bshops created by others users</h2>")
+  parr.insertAdjacentHTML("beforeend", "<h2>Find the right one for you among our Bshops</h2>")
 
 
 
@@ -29,7 +29,7 @@ const bookContent = () => {
   parraf.addEventListener("click", (event) => {
   event.preventDefault();
   //parraf.classList.add("demo");
-  parraf.insertAdjacentHTML("beforeend", "<h2>Search over all the Bshops created by others users</h2>")
+  parraf.insertAdjacentHTML("beforeend", "<h2>Book your next Haircut!</h2>")
 
 
 
@@ -39,11 +39,11 @@ const bookContent = () => {
 
 
 const shineContent = () => {
-  const parraf = document.getElementById('shine');
-  parraf.addEventListener("click", (event) => {
+  const parra = document.getElementById('shine');
+  parra.addEventListener("click", (event) => {
   event.preventDefault();
   //parraf.classList.add("demo");
-  parraf.insertAdjacentHTML("beforeend", "<h2>Search over all the Bshops created by others users</h2>")
+  parra.insertAdjacentHTML("beforeend", "<h2>Time to shine</h2>")
 
 
 

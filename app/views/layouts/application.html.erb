@@ -20,9 +20,12 @@
     <%= yield %>
     <%= render 'shared/footer' %>
     <%= javascript_include_tag 'application' %>
+     <%#= javascript_include_tag "https://maps.googleapis.com/maps/api/js" %>
     <%= javascript_pack_tag 'application' %>
     <!-- adding script coming from google for their maps -->
-     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js" %>
+     <!-- dont pay attention to line 27 -->
+       <%#= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_SERVER_KEY']}" %>
+
 
   </body>
 </html>

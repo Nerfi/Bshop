@@ -3,6 +3,8 @@ import "jquery-bar-rating";
 //importing the css
 import "jquery-bar-rating/dist/themes/css-stars.css";
 
+import $ from 'jquery';
+
 
 
 
@@ -25,12 +27,7 @@ const rating = document.querySelector('#shop_review_rating')
 //}
 
 
-
-const init = $('#shop_review_rating');
-
 const initStarRating = () => {
-  if(init) {
-
   $('#shop_review_rating').barrating({
     theme: 'css-stars',
     onSelect: (value, text, event) => {
@@ -38,6 +35,4 @@ const initStarRating = () => {
       form.submit(); // We submit the form with javascript
     }
   });
-  }
 };
-export { initStarRating };

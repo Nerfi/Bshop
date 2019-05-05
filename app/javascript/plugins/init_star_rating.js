@@ -9,7 +9,7 @@ import $ from 'jquery';
 
 
 
-const rating = document.querySelector('#shop_review_rating')
+//const rating = document.querySelector('#shop_review_rating')
 
 
 //const initStarRating = () => {

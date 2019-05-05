@@ -9,10 +9,12 @@ import { findContent } from '../components/homecards';
 import { bookContent } from '../components/homecards';
 import { shineContent } from '../components/homecards';
 import { buildMap } from '../plugins/init_mapbox';
+// adding code to see if i can fix markers
+import { initMapbox } from '../plugins/init_mapbox';
 
 initUpdateNavbarOnScroll();
 loadDynamicBannerText ();
-//initStarRating();
+initStarRating();
 displayContent ();
 findContent ();
 bookContent ();

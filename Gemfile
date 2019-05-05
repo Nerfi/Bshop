@@ -25,7 +25,9 @@ gem 'font-awesome-sass', '~> 5.6.1'
 gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
-gem 'webpacker'
+#gem 'webpacker'
+#changing webpack gem for mapbox
+gem 'webpacker', '~> 3.5.5'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

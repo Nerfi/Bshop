@@ -1,6 +1,5 @@
 import "bootstrap";
 import 'mapbox-gl/dist/mapbox-gl.css';
-import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the stylesheet_pack_tag in the layout!
 
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 import { loadDynamicBannerText } from '../components/banner';
@@ -10,8 +9,6 @@ import { findContent } from '../components/homecards';
 import { bookContent } from '../components/homecards';
 import { shineContent } from '../components/homecards';
 import { buildMap } from '../plugins/init_mapbox';
-
-
 
 initUpdateNavbarOnScroll();
 loadDynamicBannerText ();

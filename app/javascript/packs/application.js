@@ -14,9 +14,9 @@ import { initMapbox } from '../plugins/init_mapbox';
 
 initUpdateNavbarOnScroll();
 loadDynamicBannerText ();
-//initStarRating();
-displayContent ();
-findContent ();
-bookContent ();
-shineContent ();
-buildMap ();
+initStarRating();
+displayContent();
+findContent();
+bookContent();
+shineContent();
+buildMap();
